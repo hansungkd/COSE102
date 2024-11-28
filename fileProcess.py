@@ -10,6 +10,7 @@ class FileProcess:
         self.subject = None
 
     def process(self):
+        print("\n".join(self.file['유형'].unique()))
         while True:
             self.subject = input('유형을 입력하세요 >')
             if self.subject in self.file['유형'].unique():
