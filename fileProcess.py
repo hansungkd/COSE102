@@ -7,15 +7,16 @@ class FileProcess:
         self.man = []
         self.score = []
         self.woman = []
+        self.subject = None
 
     def process(self):
         while True:
-            subject = input('유형을 입력하세요 >')
-            if subject in self.file['유형'].unique():
+            self.subject = input('유형을 입력하세요 >')
+            if self.subject in self.file['유형'].unique():
                 break
             else:
                 print('선택한 유형이 존재하지 않습니다')
-        data = self.file[self.file['유형'] == subject]
+        data = self.file[self.file['유형'] == self.subject]
         for i, row in data.iterrows():
             self.score.append(row['표준점수'])
             self.man.append(row['남자'])
