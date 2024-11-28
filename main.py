@@ -17,7 +17,7 @@ def plot_graph(subject, score, man, woman):
 if __name__ == '__main__':
     path = '20231231.csv'
     file = FileProcess(path)
-
+    file.process()
     plot_graph(file.subject, file.score, file.man, file.woman)
 
 
