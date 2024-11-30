@@ -15,9 +15,9 @@ class FileProcess:
         for i, value in enumerate(subjects, start=1):
             print(f"{i}. {value}")
         while True:
-            subject_number = input('번호를 입력하세요 >')
-            if subject_number in subject_dict:
-                self.subject = subject_dict[subject_number]
+            subject_number = int(input('번호를 입력하세요 >'))
+            if subject_number in subjects_dict:
+                self.subject = subjects_dict[subject_number]
                 break
             else:
                 print('번호가 존재하지 않습니다')
