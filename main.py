@@ -4,8 +4,11 @@ import matplotlib.pyplot as plt
 def plot_graph(subject, score, man, woman):
     plt.rcParams['font.family'] = 'NanumGothic'
 
-    plt.plot(score, man, label='남', linestyle='-', linewidth=2)
-    plt.plot(score, woman, label='여', linestyle='-', linewidth=2)
+    plt.plot(score, man, label='남', linestyle='-', linewidth=2, alpha=0.7)
+    plt.scatter(score, man, label='남 점', alpha=0.7, s=15)
+
+    plt.plot(score, woman, label='여', linestyle='-', linewidth=2, alpha=0.7)
+    plt.scatter(score, woman, label='여 점', alpha=0.7, s=15)
 
     plt.title(f"2024학년도 수능 {subject} 과목 성적 분포")
     plt.xlabel("점수")
