@@ -7,7 +7,7 @@ def plot_graph(subject, score, man, woman):
     plt.plot(score, man, label='남', linestyle='-', linewidth=2)
     plt.plot(score, woman, label='여', linestyle='-', linewidth=2)
 
-    plt.title(f"{subject} 성적 분포")
+    plt.title(f"2024학년도 수능 {subject} 과목 성적 분포")
     plt.xlabel("점수")
     plt.ylabel("인원수")
     plt.legend()
