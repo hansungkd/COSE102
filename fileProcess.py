@@ -10,13 +10,17 @@ class FileProcess:
         self.subject = None
 
     def process(self):
-        print("\n".join(self.file['유형'].unique()))
+        subjects = self.file['유형'].unique()
+        subjects_dict = {i: value for i, value in enumerate(subjects, start=1)}
+        for i, value in enumerate(subjects, start=1):
+            print(f"{i}. {value}")
         while True:
-            self.subject = input('유형을 입력하세요 >')
-            if self.subject in self.file['유형'].unique():
+            subject_number = input('번호를 입력하세요 >')
+            if subject_number in subject_dict:
+                self.subject = subject_dict[subject_number]
                 break
             else:
-                print('선택한 유형이 존재하지 않습니다')
+                print('번호가 존재하지 않습니다')
         data = self.file[self.file['유형'] == self.subject]
         for i, row in data.iterrows():
             self.score.append(row['표준점수'])
