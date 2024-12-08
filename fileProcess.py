@@ -16,6 +16,7 @@ class FileProcess:
         file_list = os.listdir(current_directory)
         csv_list = [f for f in file_list if f.endswith('.csv')]
         year = [csv[:4] for csv in csv_list]
+        year.sort(key = int)
         print("\n".join(year))
         while True:
             self.year = input('연도를 입력하세요 >')
